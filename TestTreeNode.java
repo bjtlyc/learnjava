@@ -4,9 +4,10 @@ import org.junit.Before;
 import org.junit.BeforeClass;
 
 public class TestTreeNode {
+    private static TreeNode<Integer> root;
     @BeforeClass
         public static void beforeClass() {
-            TreeNode<Integer> root = new TreeNode<>(3);
+            root = new TreeNode<>(3);
             TreeNode<Integer> node1 = new TreeNode<>(1);
             TreeNode<Integer> node4 = new TreeNode<>(4);
             TreeNode<Integer> node2 = new TreeNode<>(2);
@@ -21,22 +22,22 @@ public class TestTreeNode {
             // check not null
             assertTrue(itr.hasNext());
             // check has 1
-            assertEquals(itr.next(), 1);
+            assertEquals(itr.next(), new Integer(1));
 
             // check not null
             assertTrue(itr.hasNext());
             // check has 1
-            assertEquals(itr.next(), 2);
+            assertEquals(itr.next(), new Integer(2));
 
             // check not null
             assertTrue(itr.hasNext());
             // check has 1
-            assertEquals(itr.next(), 3);
+            assertEquals(itr.next(), new Integer(3));
 
             // check not null
             assertTrue(itr.hasNext());
             // check has 1
-            assertEquals(itr.next(), 4);
+            assertEquals(itr.next(), new Integer(4));
 
             assertFalse(itr.hasNext());
         }

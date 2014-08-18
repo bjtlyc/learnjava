@@ -24,15 +24,15 @@ public class TreeItr<E> implements Iterator<E>{
     public E next() {
         while( node != null || !stack.isEmpty() ) {
             if( node == null ) {
-                node = stack.pop();
                 TreeNode<E> tmp = stack.pop();
-                node = tmp.right;
-                return tmp;
+                node = tmp.getRight();
+                return tmp.getElement();
             } else {
                 stack.push(node);
-                node = node.left;
+                node = node.getLeft();
             }
         }
+        return null;
     }
     
     @Override
